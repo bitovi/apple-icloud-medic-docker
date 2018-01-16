@@ -4,7 +4,7 @@ build:
 	docker build --build-arg CIRCLE_SHA1="$(SHA)" -t stackstorm/stackstorm:latest images/stackstorm
 
 env:
-	bin/write-env.sh conf
+	bin/medic-create-dir.sh && bin/write-env.sh conf
 
 up:
 	docker-compose up -d
